@@ -1,5 +1,12 @@
 import React, {useEffect, useState} from 'react';
-import {ActivityIndicator, FlatList, Text, View} from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  StatusBar,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 
 type Movie = {
   id: string;
@@ -7,6 +14,12 @@ type Movie = {
   releaseYear: string;
 };
 
+const Item = ({id, title}: Movie) => (
+  <View style={styles.item}>
+    <Text style={styles.title}>{id}</Text>
+    <Text style={styles.title}>{title}</Text>
+  </View>
+);
 const FlatListData = () => {
   const [isLoading, setLoading] = useState(true);
   const [data, setData] = useState<Movie[]>([]);
@@ -36,14 +49,30 @@ const FlatListData = () => {
           data={data}
           keyExtractor={({id}) => id}
           renderItem={({item}) => (
-            <Text>
-              {item.title}, {item.releaseYear}
-            </Text>
+            <Item
+              id={item.id}
+              title={item.title}
+              releaseYear={item.releaseYear}
+            />
           )}
         />
       )}
     </View>
   );
 };
-
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    marginTop: StatusBar.currentHeight || 0,
+  },
+  item: {
+    backgroundColor: '#f9c2ff',
+    padding: 20,
+    marginVertical: 8,
+    marginHorizontal: 16,
+  },
+  title: {
+    fontSize: 32,
+  },
+});
 export default FlatListData;

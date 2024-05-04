@@ -3,12 +3,13 @@ import React from 'react';
 // import HomeScreen from './src/screens/HomeScreen';
 // import {ChatScreen} from './src/screens/ChatScreen';
 import {SafeAreaView, StyleSheet} from 'react-native';
-import FlatListData from './src/screens/FlatListData';
+import BasicScreen from './src/screens/BasicScreen';
+// import FlatListData from './src/screens/FlatListData';
 
 const App = () => {
   return (
     <SafeAreaView style={styles.container}>
-      <FlatListData />
+      <BasicScreen />
     </SafeAreaView>
   );
 };
