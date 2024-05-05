@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+<key>ReactNativeConfig</key>
+	<string>$(ENVFILE)</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
@@ -48,5 +50,11 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>This app needs access to your location when it's running in the background and when it's in use to provide location-based services.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>This app needs access to your location when it's in use to provide location-based services.</string>
+	
 </dict>
 </plist>
